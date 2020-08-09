@@ -16,5 +16,5 @@ server.app.use(morgan("dev"));
 server.app.use(express.static(path.join(__dirname,"public")))
 //cors
 server.app.use(cors({ origin: true, credentials: true }));
-server.app.use('/', router); //aqui mandas desde la ruta principal a hacer uso de subrutas, para que de lo de anngular mas tienes que ponerlo que tu ruta sea desde /api por ejemplo  y no oocupar /
+server.app.use('/', router); 
 server.start()
