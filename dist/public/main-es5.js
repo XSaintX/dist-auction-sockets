@@ -788,7 +788,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
           };
-          this.http.post('http://localhost:5000/checkifexists', body.toString(), options).subscribe(function (response) {
+          this.http.post('https://auction-sockets.herokuapp.com/checkifexists', body.toString(), options).subscribe(function (response) {
             if (response.length > 0) {
               return sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Oops...', 'That user is connected. Choose another.', 'error');
             } else {
@@ -962,7 +962,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getData() {
           var _this2 = this;
 
-          this.http.get('http://localhost:5000/productlist').subscribe(function (product) {
+          this.http.get('https://auction-sockets.herokuapp.com/productlist').subscribe(function (product) {
             _this2.products = product[0].data;
           });
         }
@@ -983,7 +983,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
           };
-          this.http.post('http://localhost:5000/logout', body.toString(), options).subscribe(function (response) {});
+          this.http.post('https://auction-sockets.herokuapp.com/logout', body.toString(), options).subscribe(function (response) {});
           this.wsService.logoutWS();
         }
       }]);
@@ -1166,7 +1166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getData() {
           var _this4 = this;
 
-          this.http.get('http://localhost:5000/auctionlist').subscribe(function (product) {
+          this.http.get('https://auction-sockets.herokuapp.com/auctionlist').subscribe(function (product) {
             if (product[0].data.length > 0) {
               _this4.isOn = true;
             } else {
@@ -1202,7 +1202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
           };
-          this.http.post('http://localhost:5000/logout', body.toString(), options).subscribe(function (response) {});
+          this.http.post('https://auction-sockets.herokuapp.com/logout', body.toString(), options).subscribe(function (response) {});
           this.wsService.logoutWS();
         }
       }, {
@@ -1494,7 +1494,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function start(product) {
           var _this7 = this;
 
-          this.http.get('http://localhost:5000/checklogged').subscribe(function (res) {
+          this.http.get('https://auction-sockets.herokuapp.com/checklogged').subscribe(function (res) {
             if (res.length === 0) {
               return sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Oops...', 'There are no active users!', 'error');
             } else if (res.length === 1) {
@@ -1508,7 +1508,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
               };
 
-              _this7.http.post('http://localhost:5000/updatestate', body.toString(), options).subscribe(function (response) {
+              _this7.http.post('https://auction-sockets.herokuapp.com/updatestate', body.toString(), options).subscribe(function (response) {
                 _this7.selling = true;
               });
             }
@@ -1526,7 +1526,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
           };
-          this.http.post('http://localhost:5000/updatestate', body.toString(), options).subscribe(function (response) {
+          this.http.post('https://auction-sockets.herokuapp.com/updatestate', body.toString(), options).subscribe(function (response) {
             _this8.selling = false;
           });
         }
@@ -2235,7 +2235,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getData() {
           var _this9 = this;
 
-          this.getSubscription = this.http.get('http://localhost:5000/auctionlist').subscribe(function (product) {
+          this.getSubscription = this.http.get('https://auction-sockets.herokuapp.com/auctionlist').subscribe(function (product) {
             _this9.items = product[0].data;
             _this9.cantidaditems = Number(_this9.items.length);
           });
@@ -2612,7 +2612,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      wsUrl: 'http://localhost:5000'
+      wsUrl: 'https://auction-sockets.herokuapp.com/'
     };
     /*
      * For easier debugging in development mode, you can import the following file
@@ -2686,7 +2686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\user\desktop\sample03\angularsockets\src\main.ts */
+    /*! C:\Users\user\Desktop\sample03\angularsockets\src\main.ts */
     "./src/main.ts");
     /***/
   },

@@ -416,7 +416,7 @@ class LoginComponent {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         this.http
-            .post('http://localhost:5000/checkifexists', body.toString(), options)
+            .post('https://auction-sockets.herokuapp.com/checkifexists', body.toString(), options)
             .subscribe((response) => {
             if (response.length > 0) {
                 return sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Oops...', 'That user is connected. Choose another.', 'error');
@@ -506,7 +506,7 @@ class MainComponent {
         this.statusitem();
     }
     getData() {
-        this.http.get('http://localhost:5000/productlist').subscribe((product) => {
+        this.http.get('https://auction-sockets.herokuapp.com/productlist').subscribe((product) => {
             this.products = product[0].data;
         });
     }
@@ -522,7 +522,7 @@ class MainComponent {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         this.http
-            .post('http://localhost:5000/logout', body.toString(), options)
+            .post('https://auction-sockets.herokuapp.com/logout', body.toString(), options)
             .subscribe((response) => {
         });
         this.wsService.logoutWS();
@@ -607,7 +607,7 @@ class PanelComponent {
         this.cdref.detectChanges();
     }
     getData() {
-        this.http.get('http://localhost:5000/auctionlist').subscribe((product) => {
+        this.http.get('https://auction-sockets.herokuapp.com/auctionlist').subscribe((product) => {
             if (product[0].data.length > 0) {
                 this.isOn = true;
             }
@@ -640,7 +640,7 @@ class PanelComponent {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         this.http
-            .post('http://localhost:5000/logout', body.toString(), options)
+            .post('https://auction-sockets.herokuapp.com/logout', body.toString(), options)
             .subscribe((response) => {
         });
         this.wsService.logoutWS();
@@ -771,7 +771,7 @@ class ProductListComponent {
         });
     }
     start(product) {
-        this.http.get('http://localhost:5000/checklogged').subscribe((res) => {
+        this.http.get('https://auction-sockets.herokuapp.com/checklogged').subscribe((res) => {
             if (res.length === 0) {
                 return sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Oops...', 'There are no active users!', 'error');
             }
@@ -787,7 +787,7 @@ class ProductListComponent {
                     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 };
                 this.http
-                    .post('http://localhost:5000/updatestate', body.toString(), options)
+                    .post('https://auction-sockets.herokuapp.com/updatestate', body.toString(), options)
                     .subscribe(response => {
                     this.selling = true;
                 });
@@ -803,7 +803,7 @@ class ProductListComponent {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         this.http
-            .post('http://localhost:5000/updatestate', body.toString(), options)
+            .post('https://auction-sockets.herokuapp.com/updatestate', body.toString(), options)
             .subscribe(response => {
             this.selling = false;
         });
@@ -1147,7 +1147,7 @@ class SubastaComponent {
         }
     }
     getData() {
-        this.getSubscription = this.http.get('http://localhost:5000/auctionlist').subscribe((product) => {
+        this.getSubscription = this.http.get('https://auction-sockets.herokuapp.com/auctionlist').subscribe((product) => {
             this.items = product[0].data;
             this.cantidaditems = Number(this.items.length);
         });
@@ -1345,7 +1345,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    wsUrl: 'http://localhost:5000'
+    wsUrl: 'https://auction-sockets.herokuapp.com/'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -1392,7 +1392,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\user\desktop\sample03\angularsockets\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\sample03\angularsockets\src\main.ts */"./src/main.ts");
 
 
 /***/ }),
